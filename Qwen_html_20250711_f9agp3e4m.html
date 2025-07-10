@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mavo-Eco Lodge</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/mavo "></script>
+</head>
+<body>
+
+<!-- Hero Section -->
+<header class="hero" mv-app="mavo-eco-lodge" persist="local">
+  <div class="overlay">
+    <h1 property="hero-title">Welcome to Mavo-Eco Lodge</h1>
+    <p property="hero-subtitle">Experience nature in harmony with sustainability.</p>
+  </div>
+</header>
+
+<!-- About Us -->
+<section id="about" class="content-section" property="about-section">
+  <h2>About Us</h2>
+  <p>
+    Mavo-Eco Lodge is nestled in the heart of nature, offering serene and sustainable living experiences.
+    Our eco-friendly cabins are built using recycled materials and powered by renewable energy sources.
+    Whether you're here for relaxation or adventure, we ensure your stay leaves a minimal ecological footprint.
+  </p>
+</section>
+
+<!-- Accommodation -->
+<section id="accommodation" class="content-section" property="accommodation-section">
+  <h2>Accommodation</h2>
+  <p>We offer a range of comfortable, off-grid accommodations:</p>
+  <ul>
+    <li><strong>Eco Cabins:</strong> Small, cozy cabins with solar-powered lighting and heating.</li>
+    <li><strong>Treetop Retreats:</strong> Elevated treehouses surrounded by forest views.</li>
+    <li><strong>FamCamp Pods:</strong> Family-friendly geodesic domes with sleeping space for up to 6 people.</li>
+  </ul>
+</section>
+
+<!-- Sustainability -->
+<section id="sustainability" class="content-section" property="sustainability-section">
+  <h2>Sustainability Practices</h2>
+  <p>We’re committed to protecting the environment through:</p>
+  <ul>
+    <li>Solar and wind energy generation</li>
+    <li>Zero-waste kitchen and dining</li>
+    <li>Organic garden supplying fresh produce</li>
+    <li>Wildlife conservation initiatives</li>
+  </ul>
+</section>
+
+<!-- Photo Gallery -->
+<section id="gallery" class="content-section" property="gallery">
+  <h2>Photo Gallery</h2>
+  <div class="gallery-grid">
+    <figure mv-multiple>
+      <img src="https://source.unsplash.com/400x300/?nature,forest&random=1" alt="Gallery Image 1" property="image" />
+      <figcaption property="caption">Eco Cabin in Forest</figcaption>
+    </figure>
+    <figure mv-multiple>
+      <img src=" https://source.unsplash.com/400x300/?nature,forest&random=2" alt="Gallery Image 2" property="image" />
+      <figcaption property="caption">Treetop Retreat View</figcaption>
+    </figure>
+    <figure mv-multiple>
+      <img src=" https://source.unsplash.com/400x300/?nature,forest&random=3" alt="Gallery Image 3" property="image" />
+      <figcaption property="caption">Sustainable Garden</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Booking Form -->
+<section id="book" class="content-section" mv-storage=".booking-data">
+  <h2>Book Your Stay</h2>
+  <form mv-action="add">
+    <label>Name:
+      <input type="text" required property="name">
+    </label><br>
+
+    <label>Email:
+      <input type="email" required property="email">
+    </label><br>
+
+    <label>Arrival Date:
+      <input type="date" required property="arrival">
+    </label><br>
+
+    <label>Departure Date:
+      <input type="date" required property="departure">
+    </label><br>
+
+    <label>Accommodation Type:
+      <select property="accommodation-type">
+        <option>Eco Cabin</option>
+        <option>Treetop Retreat</option>
+        <option>FamCamp Pod</option>
+      </select>
+    </label><br>
+
+    <button type="submit">Submit Booking</button>
+  </form>
+
+  <!-- Optional: Show submitted bookings -->
+  <div class="booking-data" hidden>
+    <h3>Submitted Bookings</h3>
+    <ul>
+      <li mv-multiple>
+        <strong>{{name}}</strong> - {{accommodation-type}} from {{arrival}} to {{departure}}
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="content-section" property="contact-section">
+  <h2>Contact & Bookings</h2>
+  <p>Ready to experience eco-living? Get in touch with us!</p>
+  <address>
+    📍 Forest Valley, Green Ridge National Park<br/>
+    📞 +1 (555) 123-4567<br/>
+    📧 reservations@mavoecolodge.com
+  </address>
+</section>
+
+<footer>
+  <p>&copy; <span property="year" mv-macros>[getFullYear]</span> Mavo-Eco Lodge. All rights reserved.</p>
+</footer>
+
+<script>
+  Mavo.Shortcuts.add("getFullYear", () => new Date().getFullYear());
+</script>
+
+</body>
+</html>
